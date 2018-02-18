@@ -5,9 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"net.playground.flixservice.db"
-        , "net.playground.flixservice.service",
-        "net.playground.flixservice.controller"
+@ComponentScan({"net.playground.flixservice.db",
+        "net.playground.flixservice.service",
+        "net.playground.flixservice.controller",
+        "net.playground.flixservice.security"
 })
 public class FlixServiceApplication {
 
