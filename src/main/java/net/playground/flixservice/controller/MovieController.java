@@ -31,7 +31,7 @@ public class MovieController {
     }
 
     @GetMapping(value = "/{id}/events", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<MovieEvent> getEvents(String movieId) {
+    public Flux<MovieEvent> getEvents(@PathVariable(name = "id") String movieId) {
         return movieService.getEvents(movieId);
     }
 }
