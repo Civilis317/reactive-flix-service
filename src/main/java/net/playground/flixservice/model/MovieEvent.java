@@ -1,4 +1,4 @@
-package net.playground.flixservice.db;
+package net.playground.flixservice.model;
 
 import java.util.Date;
 

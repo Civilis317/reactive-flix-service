@@ -1,6 +1,6 @@
 package net.playground.flixservice.service;
 
-import net.playground.flixservice.db.MovieEvent;
+import net.playground.flixservice.model.MovieEvent;
 import net.playground.flixservice.db.MovieRepository;
 import net.playground.flixservice.model.Movie;
 import org.springframework.stereotype.Service;

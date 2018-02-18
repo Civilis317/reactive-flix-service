@@ -1,6 +1,6 @@
 package net.playground.flixservice.controller;
 
-import net.playground.flixservice.db.MovieEvent;
+import net.playground.flixservice.model.MovieEvent;
 import net.playground.flixservice.model.Movie;
 import net.playground.flixservice.service.MovieService;
 import org.springframework.http.MediaType;
@@ -31,7 +31,7 @@ public class MovieController {
     }
 
     @GetMapping(value = "/{id}/events", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<MovieEvent> getEvents(String movieId) {
-        return movieService.getEvents(movieId);
+    public Flux<MovieEvent> getEvents(@PathVariable String id) {
+        return movieService.getEvents(id);
     }
 }
