@@ -1,0 +1,17 @@
+- without security:
+curl -v localhost:8080/movies | python -m json.tool
+curl -v localhost:8080/movies/5a89d0da0daa7f225eb3c5f8 | python -m json.tool
+curl -v -S localhost:8080/movies/5a89d0da0daa7f225eb3c5f8/events
+
+- no user:
+curl -v localhost:8080/movies | python -m json.tool
+< HTTP/1.1 401 Unauthorized
+
+-user: lzeilstra (role=USER, which is not enough in secured service)
+curl -v -ulzeilstra:welcome1 localhost:8080/movies | python -m json.tool
+< HTTP/1.1 403 Forbidden
+
+- user admin (roles= USER, ADMIN), which will do: HTTP/1.1 200 OK
+curl -v -uadmin:admin localhost:8080/movies | python -m json.tool
+curl -v -uadmin:admin localhost:8080/movies/5a89d3a20daa7f228f8bcd58 | python -m json.tool
+curl -S -v -uadmin:admin localhost:8080/movies/5a89d3a20daa7f228f8bcd58/events
